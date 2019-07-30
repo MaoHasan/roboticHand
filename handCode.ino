@@ -67,10 +67,10 @@ void setup()
 
 void loop()
 {
-    thumbIn = map(analogRead(thumbinPin), 730, 950, 0, 180);
+    thumbIn = map(analogRead(thumbInPin), 730, 950, 0, 180);
     Serial.print("Thumb: ");
     Serial.print("flex reading: ");
-    Serial.print(analogRead(thumbinPin));
+    Serial.print(analogRead(thumbInPin));
     Serial.print(", currepending angle: ");
     Serial.println(thumbIn);
 

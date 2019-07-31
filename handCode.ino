@@ -101,6 +101,9 @@ void loop()
     Serial.print(analogRead(pinkyInPin));
     Serial.print(", currepending angle: ");
     Serial.println(pinkyIn);
+    
+    Serial.println("");
+    Serial.println("---------------------------------------");
 
     thumbOut.write(thumbIn);
     indexOut.write(indexIn);

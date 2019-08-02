@@ -54,21 +54,29 @@ void setup()
     Serial.begin(9600);
     Serial.println("Serial communicationn initialized");
 
+    //attaching each servo motor to it's arduino pin.
     thumbOut.attach(thumbOutPin);
     indexOut.attach(indexOutPin);
     middleOut.attach(middleOutPin);
     ringOut.attach(ringOutPin);
     pinkyOut.attach(pinkyOutPin);
-    delay(500);
+    delay(500); //delay for ux purposes.
 
     Serial.println("Fingers attached.");
-    delay(500);
+    delay(500); //delay for ux purposes.
 }
 
 void loop()
 {
-    thumbIn = map(analogRead(thumbInPin), 730, 950, 0, 180);
-    Serial.print("Thumb: ");
+    /*
+    * the process goes as follows:
+    * we read the flex sensor using the analog read command.
+    * we map the read value from the flex to be between the min read value and the max read value
+    * to be mapped to the curresponding servo angles resulting in the same hand movement.
+    */
+
+    thumbIn = map(analogRead(thumbInPin), 730, 950, 0, 180); //read the flex and map it
+    Serial.print("Thumb: "); //printing the result of the mapping command.
     Serial.print("flex reading: ");
     Serial.print(analogRead(thumbInPin));
     Serial.print(", currepending angle: ");
@@ -105,11 +113,12 @@ void loop()
     Serial.println("");
     Serial.println("---------------------------------------");
 
+    // we write the gotten values from the map command to the servos to achieve the requested angles.
     thumbOut.write(thumbIn);
     indexOut.write(indexIn);
     middleOut.write(middleIn);
     ringOut.write(ringIn);
     pinkyOut.write(pinkyIn);
 
-    delay(50);
+    delay(50); //delay for PWM purposes.
 }

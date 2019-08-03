@@ -89,42 +89,42 @@ void loop()
     Serial.println(thumbIn);
 
     indexIn = map(analogRead(indexInPin), 730, 950, 0, 60);
-    // Serial.print("Index: ");
-    // Serial.print("flex reading: ");
-    // Serial.print(analogRead(indexInPin));
-    // Serial.print(", currepending angle: ");
-    // Serial.println(indexIn);
+    Serial.print("Index: ");
+    Serial.print("flex reading: ");
+    Serial.print(analogRead(indexInPin));
+    Serial.print(", currepending angle: ");
+    Serial.println(indexIn);
 
     middleIn = map(analogRead(middleInPin), 730, 950, 0, 90);
-    // Serial.print("Middle: ");
-    // Serial.print("flex reading: ");
-    // Serial.print(analogRead(middleInPin));
-    // Serial.print(", currepending angle: ");
-    // Serial.println(middleIn);
+    Serial.print("Middle: ");
+    Serial.print("flex reading: ");
+    Serial.print(analogRead(middleInPin));
+    Serial.print(", currepending angle: ");
+    Serial.println(middleIn);
 
     ringIn = map(analogRead(ringInPin), 730, 950, 0, 35);
-    // Serial.print("Ring: ");
-    // Serial.print("flex reading: ");
-    // Serial.print(analogRead(ringInPin));
-    // Serial.print(", currepending angle: ");
-    // Serial.println(ringIn);
+    Serial.print("Ring: ");
+    Serial.print("flex reading: ");
+    Serial.print(analogRead(ringInPin));
+    Serial.print(", currepending angle: ");
+    Serial.println(ringIn);
 
     pinkyIn = map(analogRead(pinkyInPin), 730, 950, 0, 45);
-    // Serial.print("Pinky: ");
-    // Serial.print("flex reading: ");
-    // Serial.print(analogRead(pinkyInPin));
-    // Serial.print(", currepending angle: ");
-    // Serial.println(pinkyIn);
+    Serial.print("Pinky: ");
+    Serial.print("flex reading: ");
+    Serial.print(analogRead(pinkyInPin));
+    Serial.print(", currepending angle: ");
+    Serial.println(pinkyIn);
     
     Serial.println("");
     Serial.println("---------------------------------------");
 
     // we write the gotten values from the map command to the servos to achieve the requested angles.
-    thumbOut.write(thumbIn);
-    indexOut.write(indexIn);
-    middleOut.write(middleIn);
-    ringOut.write(ringIn);
-    pinkyOut.write(pinkyIn);
+    // thumbOut.write(thumbIn);
+    // indexOut.write(indexIn);
+    // middleOut.write(middleIn);
+    // ringOut.write(ringIn);
+    // pinkyOut.write(pinkyIn);
 
-    delay(500); //delay for PWM purposes.
+    delay(1000); //delay for PWM purposes.
 }

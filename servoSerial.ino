@@ -73,7 +73,7 @@ void setup()
 void loop()
 {
     Serial.println("enter finger number 1-5");
-    while (Serial.available() > 0)
+    while (!Serial.available())
     {
         input1 = Serial.parseInt();
         Serial.print("enter finger angle");

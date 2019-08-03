@@ -64,12 +64,7 @@ void setup()
 
     Serial.println("Fingers attached.");
     delay(500); //delay for ux purposes.
-    Serial.println("send 1 to power the hand");
-    while (Serial.available()){
-        if(Serial.read() == '1'){
-            break;
-        }
-    }
+
 }
 
 void loop()
@@ -82,6 +77,7 @@ void loop()
     */
 
     thumbIn = map(analogRead(thumbInPin), 730, 950, 0, 80); //read the flex and map it
+    thumbIn = thumbIn - thumbIn%5;
     thumbIn = constrain(thumbIn,0,80);
     Serial.print("Thumb: "); //printing the result of the mapping command.
     Serial.print("flex reading: ");
@@ -90,36 +86,40 @@ void loop()
     Serial.println(thumbIn);
 
     indexIn = map(analogRead(indexInPin), 730, 950, 0, 60);
+    indexIn =  indexIn - indexIn%5;
     indexIn = constrain (indexIn,0,60);
-    // Serial.print("Index: ");
-    // Serial.print("flex reading: ");
-    // Serial.print(analogRead(indexInPin));
-    // Serial.print(", currepending angle: ");
-    // Serial.println(indexIn);
+    Serial.print("Index: ");
+    Serial.print("flex reading: ");
+    Serial.print(analogRead(indexInPin));
+    Serial.print(", currepending angle: ");
+    Serial.println(indexIn);
 
     middleIn = map(analogRead(middleInPin), 730, 950, 0, 90);
+    middleIn =  middleIn - middleIn%5;
     middleIn = constrain(middleIn,0,90);
-    // Serial.print("Middle: ");
-    // Serial.print("flex reading: ");
-    // Serial.print(analogRead(middleInPin));
-    // Serial.print(", currepending angle: ");
-    // Serial.println(middleIn);
+    Serial.print("Middle: ");
+    Serial.print("flex reading: ");
+    Serial.print(analogRead(middleInPin));
+    Serial.print(", currepending angle: ");
+    Serial.println(middleIn);
 
     ringIn = map(analogRead(ringInPin), 730, 950, 0, 35);
+    ringIn = ringIn - ringIn%5;
     ringIn = constrain(ringIn,0,35);
-    // Serial.print("Ring: ");
-    // Serial.print("flex reading: ");
-    // Serial.print(analogRead(ringInPin));
-    // Serial.print(", currepending angle: ");
-    // Serial.println(ringIn);
+    Serial.print("Ring: ");
+    Serial.print("flex reading: ");
+    Serial.print(analogRead(ringInPin));
+    Serial.print(", currepending angle: ");
+    Serial.println(ringIn);
 
     pinkyIn = map(analogRead(pinkyInPin), 800, 1000, 0, 45);
+    pinkyIn = pinkyIn - pinkyIn%5;
     pinkyIn = constrain(pinkyIn,0,45);
-    // Serial.print("Pinky: ");
-    // Serial.print("flex reading: ");
-    // Serial.print(analogRead(pinkyInPin));
-    // Serial.print(", currepending angle: ");
-    // Serial.println(pinkyIn);
+    Serial.print("Pinky: ");
+    Serial.print("flex reading: ");
+    Serial.print(analogRead(pinkyInPin));
+    Serial.print(", currepending angle: ");
+    Serial.println(pinkyIn);
     
     Serial.println("");
     Serial.println("---------------------------------------");

@@ -52,7 +52,22 @@ void setup()
     middleOut.attach(middleOutPin);
     ringOut.attach(ringOutPin);
     pinkyOut.attach(pinkyOutPin);
+
+                    thumbOut.write(0);
+    delay(50); //delay for ux purposes.
+
+                indexOut.write(0);
+    delay(50); //delay for ux purposes.
+
+                middleOut.write(0);
+    delay(50); //delay for ux purposes.
+
+                ringOut.write(0);
+    delay(50); //delay for ux purposes.
+
+                pinkyOut.write(0);
     delay(500); //delay for ux purposes.
+    
 }
 
 void loop()

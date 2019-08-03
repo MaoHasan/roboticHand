@@ -76,7 +76,7 @@ void loop()
     * to be mapped to the curresponding servo angles resulting in the same hand movement.
     */
 
-    thumbIn = map(analogRead(thumbInPin), 730, 950, 0, 80); //read the flex and map it
+    thumbIn = map(analogRead(thumbInPin), 760, 950, 0, 80); //read the flex and map it
     thumbIn = thumbIn - thumbIn%5;
     thumbIn = constrain(thumbIn,0,80);
     Serial.print("Thumb: "); //printing the result of the mapping command.
@@ -94,7 +94,7 @@ void loop()
     Serial.print(", currepending angle: ");
     Serial.println(indexIn);
 
-    middleIn = map(analogRead(middleInPin), 730, 950, 0, 90);
+    middleIn = map(analogRead(middleInPin), 760, 950, 0, 90);
     middleIn =  middleIn - middleIn%5;
     middleIn = constrain(middleIn,0,90);
     Serial.print("Middle: ");

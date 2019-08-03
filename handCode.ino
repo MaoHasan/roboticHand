@@ -64,6 +64,12 @@ void setup()
 
     Serial.println("Fingers attached.");
     delay(500); //delay for ux purposes.
+    Serial.println("send 1 to power the hand");
+    while (serial.available()){
+        if(serial.read() == '1'){
+            break;
+        }
+    }
 }
 
 void loop()
@@ -120,5 +126,5 @@ void loop()
     ringOut.write(ringIn);
     pinkyOut.write(pinkyIn);
 
-    delay(50); //delay for PWM purposes.
+    delay(500); //delay for PWM purposes.
 }
